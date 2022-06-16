@@ -7,7 +7,6 @@ const styles = {
 };
 
 const TrendingCardRow = ({
-  key,
   number,
   symbol,
   name,
