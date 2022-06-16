@@ -3,6 +3,7 @@ import More from '../../assets/svg/more';
 import Star from '../../assets/svg/star';
 import Rate from './Rate';
 import { useRouter } from 'next/router';
+import CoinNameRow from './CoinNameRow';
 
 const styles = {
   tableRow: 'text-white border-b border-gray-800 text-[0.93rem]',
@@ -59,7 +60,7 @@ const CMCTableRow = ({
   };
 
   const formatNum = (num) => {
-    // return Number(num.toFixed(2)).toLocaleString();
+    return Number(parseFloat(num).toFixed(2)).toLocaleString()
   };
 
   return (
@@ -89,7 +90,7 @@ const CMCTableRow = ({
           <Rate isIncrement={hRateIsIncrement} rate={`${formatNum(hRate)}%`} />
         </td>
         <td>
-          <Rate isIncrement={dRateIsIncrement} rate={`${formatNum(dRate)}`} />
+          <Rate isIncrement={dRateIsIncrement} rate={`${formatNum(dRate)}%`} />
         </td>
 
         <td>
