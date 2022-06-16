@@ -129,6 +129,16 @@ const CMCPriceConverter = ({
             alt=""
           />
         );
+      case 'Avalanche':
+        return (
+          <Image
+            src={avalanche}
+            className="rounded-full"
+            width={50}
+            height={50}
+            alt=""
+          />
+        );
     }
   };
 
