@@ -2,6 +2,8 @@ import Header from '../../components/Header';
 import solana from '../../assets/solana.png';
 import Usd from '../../assets/svg/usd';
 import { useEffect, useState } from 'react';
+import CMCPriceConverter from '../../components/cmc-table/CMCPriceConverter';
+import Graph from '../../components/Graph';
 
 const styles = {
   activeTab: 'p-1 px-2 mr-2 rounded-lg bg-[#171924]',
@@ -9,7 +11,7 @@ const styles = {
   tabContainer:
     'flex items-center p-2 rounded-xl bg-[#222531] border border-grey-500/10 text-sm',
   info: 'min-h-screen',
-  main: 'text-white mx-auto max-w-screen-2xl',
+  main: 'text-white mx-auto max-w-screen-2xl px-[80px]',
   flexStart: 'flex items-start',
   flexBetween: 'flex justify-between',
   flexBetweenCenter: 'flex justify-between items-center',
@@ -31,7 +33,7 @@ const Currencies = () => {
     const urlParams = new URLSearchParams(queryString);
 
     setCoinName(urlParams.get('coin'));
-    // setPrice(urlParams.get('price').toLocaleString());
+    setPrice(Math.round(Number(urlParams.get('price'))).toLocaleString());
     setCoinSymbol(urlParams.get('symbol'));
   };
 
@@ -61,7 +63,7 @@ const Currencies = () => {
               </div>
             </div>
             <br />
-            {/* <Graph /> */}
+            <Graph />
             <br />
 
             <div className={styles.flexBetweenCenter}>
@@ -84,12 +86,18 @@ const Currencies = () => {
             </div>
             <br />
             <br />
-            {/* <CMCPriceConverter from={coinName} fromSymbol={coinSymbol} fromLogo={solana] toLogo={<Usd />} price={price} to='United States Dollars' toSymbol=''USD/> */}
+            <CMCPriceConverter
+              from={coinName}
+              fromSymbol={coinSymbol}
+              fromLogo={solana}
+              toLogo={<Usd />}
+              price={price}
+              to="United States Dollars"
+              toSymbol="USD"
+            />
           </div>
 
-          <div className="pt-10 ml-5">
-            {/* <Chat /> */}
-          </div>
+          <div className="pt-10 ml-5">{/* <Chat /> */}</div>
         </div>
       </main>
     </div>
