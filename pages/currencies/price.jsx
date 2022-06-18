@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react"
-import Header from '../../components/Header'
+import { useState, useEffect } from 'react';
+import Header from '../../components/Header';
+import CoinDetails from '../../components/CoinDetails';
 
 const Price = () => {
-    const [coinName, setCoinName] = useState('');
+  const [coinName, setCoinName] = useState('');
   const [coinSymbol, setCoinSymbol] = useState('');
   const [price, setPrice] = useState('');
 
@@ -21,10 +22,10 @@ const Price = () => {
 
   return (
     <div>
-        <Header />
-        {/* <CoinDetails coinName={coinName} price={price} coinSymbol={coinSymbol}/> */}
+      <Header />
+      <CoinDetails coinName={coinName} price={price} coinSymbol={coinSymbol} />
     </div>
-  )
-}
+  );
+};
 
-export default Price
+export default Price;
