@@ -11,6 +11,8 @@ import terra from '../assets/terra.png';
 import solana from '../assets/solana.png';
 import bnb from '../assets/bnb.png';
 import avalanche from '../assets/avalanche.png';
+import DropDownBtn from './buttons/DropDownBtn';
+import RateFilled from './buttons/RateFilled';
 
 const styles = {
   coinDetails: 'min-h-screen text-white px-[80px]',
@@ -135,13 +137,13 @@ const CoinDetails = ({ coinName, coinSymbol, price }) => {
     <main className={styles.coinDetails}>
       <div>
         <div className={styles.coinDetailsWrapper}>
-          <div className='flex flex-col w-fit'>
-            <div className='flex items-center'>
+          <div className="flex flex-col w-fit">
+            <div className="flex items-center">
               {coinIcon()}
               &nbsp; &nbsp;
               <div>
-                <div className='flex'>
-                  <p className='text-3xl'>{coinName}</p>
+                <div className="flex">
+                  <p className="text-3xl">{coinName}</p>
                   &nbsp; &nbsp;&nbsp; &nbsp;
                   <p className={styles.coinSymbol}>{coinSymbol}</p>
                 </div>
@@ -170,33 +172,33 @@ const CoinDetails = ({ coinName, coinSymbol, price }) => {
             </div>
           </div>
 
-          <div className='-ml-16'>
+          <div className="-ml-16">
             <div className={styles.coinRates}>
               <div>
-                <p className='text-gray-400'>
+                <p className="text-gray-400">
                   {coinName} ({coinSymbol})
                 </p>
-                <div className='flex my-3'>
-                  <h1 className='text-4xl'>${price}</h1>
-                  {/* <RateFilled /> */}
+                <div className="flex my-3">
+                  <h1 className="text-4xl">${price}</h1>
+                  <RateFilled />
                 </div>
-                <div className='flex items-start'>
-                  <p className='text-gray-400'> 15.26 ETH</p>
+                <div className="flex items-start">
+                  <p className="text-gray-400"> 15.26 ETH</p>
                   &nbsp;&nbsp;&nbsp;
-                  <Rate isIncrement={false} rate='0.53%' />
+                  <Rate isIncrement={false} rate="0.53%" />
                 </div>
-                <div className='flex items-start'>
-                  <p className='text-gray-400'> 24.33 BTC</p>
+                <div className="flex items-start">
+                  <p className="text-gray-400"> 24.33 BTC</p>
                   &nbsp;&nbsp;&nbsp;
-                  <Rate isIncrement={true} rate='0.99%' />
+                  <Rate isIncrement={true} rate="0.99%" />
                 </div>
               </div>
 
-              <div className='flex'>
-                {/* <DropdownBtn label='Buy' />
-                <DropdownBtn label='Exchange' />
-                <DropdownBtn label='Gaming' />
-                <DropdownBtn label='Earn Crypto' /> */}
+              <div className="flex">
+                <DropDownBtn label="Buy" />
+                <DropDownBtn label="Exchange" />
+                <DropDownBtn label="Gaming" />
+                <DropDownBtn label="Earn Crypto" />
               </div>
             </div>
 
@@ -206,7 +208,7 @@ const CoinDetails = ({ coinName, coinSymbol, price }) => {
                   <small className={styles.title}>Market Cap</small>
                 </div>
                 <small>$731,935,983,865</small>
-                <Rate isIncrement={true} rate='0.53%' />
+                <Rate isIncrement={true} rate="0.53%" />
               </div>
 
               <div className={styles.borderLeft}>
@@ -216,18 +218,18 @@ const CoinDetails = ({ coinName, coinSymbol, price }) => {
                   </small>
                 </div>
                 <small>$811,236,224,810</small>
-                <Rate isIncrement={true} rate='0.53%' />
+                <Rate isIncrement={true} rate="0.53%" />
               </div>
 
               <div className={styles.borderLeft}>
                 <div>
                   <div>
                     <small className={styles.title}>
-                      Volume &nbsp;<small className='coin-symbol'> BTC</small>{' '}
+                      Volume &nbsp;<small className="coin-symbol"> BTC</small>{' '}
                     </small>
                   </div>
                   <small>$24,143,176,324</small>
-                  <Rate isIncrement={true} rate='0.92%' />
+                  <Rate isIncrement={false} rate="0.92%" />
                 </div>
                 <br />
                 <div>
